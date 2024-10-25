@@ -1,0 +1,1870 @@
+void ignorethis()
+{
+    return;
+    //ignore this lmao, it's just so compiler doesnt commit die
+}
+//Enumeration guide :
+//Call skills by name ( AI_ACT_SKILL( Skill.Agi ); to use Agi), extra information is here to be convenient, or for those unable to (Or unwanting) To access Amicitia wiki
+//The usuable versions of skills will not have the _IDxxxx attached to them, only the ones used by bosses or possible duplicates, this is to make this enum less confusing for those not using custom skill.tbls and because it made the most sense
+//Below is a small guide about the extra information that will eventually be present on all skills, Format without any info is like this : skill = int, //"" [] {} ()
+//"Skill Description, if present. Edit the name.tbl in your relevant language's cpk, this has its own editing tool, dont use 010" [Technical Details, If relevant. Wont be shown for BLANK or Reserve skills, as they all use a default] {Full Hex ID} (Full Int ID) #Extra Notes : Author
+//If you plan to edit Any data about the skills and want to use this enum, I advise editing them here aswell, for Semantics sake
+//You can use the find function to look for specific parameters, descriptions, names or IDs in this enum.
+//It can also serve as a cleaner way to have all relevant skill information in one place, though documenting everything is very time consuming
+enum Skill {
+    Attack = 0, //"BLANK" {0000} (0000)
+    BLANK_ID1 = 1, //"BLANK" {0001} (0001)
+    BLANK_ID2 = 2, //"BLANK" {0002} (0002)
+    BLANK_ID3 = 3, //"BLANK" {0003} (0003)
+    BLANK_ID4 = 4, //"BLANK" {0004} (0004)
+    BLANK_ID5 = 5, //"BLANK" {0005} (0005)
+    BLANK_ID6 = 6, //"BLANK" {0006} (0006)
+    BLANK_ID7 = 7, //"BLANK" {0007} (0007)
+    BLANK_ID8 = 8, //"BLANK" {0008} (0008)
+    BLANK_ID9 = 9, //"BLANK" {0009} (0009)
+    Agi = 10, //"Light Fire dmg to one foe. Chance of inflicting Burn" [40 base Fire damage, Single Target, 25% Burn Chance, 4 SP, Uses Magic Stat, 99 Acc] {000A} (0010)
+    Agilao = 11, //"Medium Fire dmg to one foe. Chance of inflicting Burn" [100 base Fire damage, Single Target, 25% Burn Chance, 8 SP, Uses Magic Stat, 99 Acc] {000B} (0011)
+    Agidyne = 12, //"Heavy Fire dmg to one foe. Chance of inflicting Burn" [160 base Fire damage, Single Target, 25% Burn Chance, 12 SP, Uses Magic Stat, 99 Acc] {000C} (0012)
+    Maragi = 13, //"Light Fire dmg to all foes. Chance of inflicting Burn" [40 base Fire damage, Multi Target, 20% Burn Chance, 10 SP, Uses Magic Stat, 95 Acc] {000D} (0013)
+    Maragion = 14, //"Medium Fire dmg to all foes. Chance of inflicting Burn" [100 base Fire damage, Multi Target, 20% Burn Chance, 16 SP, Uses Magic Stat, 95 Acc] {000E} (0014)
+    Maragidyne = 15, //"Heavy Fire dmg to all foes. Chance of inflicting Burn" [160 base Fire damage, Multi Target, 20% Burn Chance, 22 SP, Uses Magic Stat, 95 Acc] {000F} (0015)
+    Agi_ID16 = 16, //"BLANK" [40 base Fire damage, Single Target, 4 SP, Uses Magic Stat, 98 Acc] {0010} (0016)
+    Maragi_ID17 = 17, //"BLANK" [40 base Fire damage, Multi Target, 10 SP, Uses Magic Stat, 95 Acc] {0011} (0017)
+    Fire_Ball = 18, //"BLANK" [300 base fire damage, Multi Target, 20% burn chance, 0 Cost, Uses magic stat, 98 Acc] {0012} (0018)
+    Raging_Flames = 19, //"" [] {} ()
+    Bufu = 20, //
+    Bufula = 21, //
+    Bufudyne = 22,
+    Mabufu = 23,
+    Mabufula = 24,
+    Mabufudyne = 25,
+    Bufu_ID26 = 26,
+    Mabufu_ID27 = 27,
+    Snow_Ball = 28,
+    Megidolaon_ID29 = 29,
+    Garu = 30,
+    Garula = 31,
+    Garudyne = 32,
+    Magaru = 33,
+    Magarula = 34,
+    Magarudyne = 35,
+    Garu_ID36 = 36,
+    Gale_Ball = 37,
+    Bless_Ball = 38,
+    Curse_Ball = 39,
+    Zio = 40,
+    Zionga = 41,
+    Ziodyne = 42,
+    Mazio = 43,
+    Mazionga = 44,
+    Maziodyne = 45,
+    Zio_ID46 = 46,
+    Mazio_ID47 = 47,
+    Volt_Ball = 48,
+    Make_it_Rain = 49,
+    Hama = 50,
+    Hamaon = 51,
+    Mahama = 52,
+    Mahamaon = 53,
+    Kouha = 54,
+    Kouga = 55,
+    Kougaon = 56,
+    Makouha = 57,
+    Makouga = 58,
+    Makougaon = 59,
+    Mudo = 60,
+    Mudoon = 61,
+    Mamudo = 62,
+    Mamudoon = 63,
+    Eiha = 64,
+    Eiga = 65,
+    Eigaon = 66,
+    Maeiha = 67,
+    Maeiga = 68,
+    Maeigaon = 69,
+    Megido = 70,
+    Megidola = 71,
+    Megidolaon = 72,
+    Frei = 73,
+    Freila = 74,
+    Freidyne = 75,
+    Mafrei = 76,
+    Mafreila = 77,
+    Mafreidyne = 78,
+    Nuke_Ball = 79,
+    Dazzler = 80,
+    Nocturnal_Flash = 81,
+    Pulinpa = 82,
+    Tentarafoo = 83,
+    Evil_Touch = 84,
+    Evil_Smile = 85,
+    Makajama = 86,
+    Makajamaon = 87,
+    Famines_Breath = 88,
+    Famines_Scream = 89,
+    Dormina = 90,
+    Lullaby = 91,
+    Taunt = 92,
+    Wage_War = 93,
+    Ominous_Words = 94,
+    Abysmal_Surge = 95,
+    Marin_Karin = 96,
+    Brain_Jack = 97,
+    Trapped_Rat = 98,
+    Psy_Ball = 99,
+    Self_destruct_ID100 = 100,
+    Self_destruct_ID101 = 101,
+    Self_destruct_ID102 = 102,
+    Life_Drain = 103,
+    Spirit_Drain = 104,
+    Life_Leech = 105,
+    Spirit_Leech = 106,
+    Spirit_Drain_ID107 = 107,
+    NOT_USED_ID108 = 108,
+    BLANK_ID109 = 109,
+    Foul_Breath = 110,
+    Stagnant_Air = 111,
+    Reverse_Rub = 112,
+    Ghastly_Wail = 113,
+    NOT_USED_ID114 = 114,
+    Drain = 115,
+    Megidola_ID116 = 116,
+    Launch = 117,
+    Special_Fireworks = 118,
+    Drift = 119,
+    Inferno = 120,
+    Blazing_Hell = 121,
+    Low_Burn = 122,
+    Med_Burn = 123,
+    High_Burn = 124,
+    Low_Freeze = 125,
+    Med_Freeze = 126,
+    High_Freeze = 127,
+    Low_Shock = 128,
+    Med_Shock = 129,
+    Diamond_Dust = 130,
+    Ice_Age = 131,
+    High_Shock = 132,
+    Low_Dizzy = 133,
+    Med_Dizzy = 134,
+    High_Dizzy = 135,
+    Low_Confuse = 136,
+    Med_Confuse = 137,
+    High_Confuse = 138,
+    Low_Fear = 139,
+    Panta_Rhei = 140,
+    Vacuum_Wave = 141,
+    Med_Fear = 142,
+    High_Fear = 143,
+    Low_Forget = 144,
+    Med_Forget = 145,
+    High_Forget = 146,
+    Low_Brainwash = 147,
+    Med_Brainwash = 148,
+    High_Brainwash = 149,
+    Thunder_Reign = 150,
+    Wild_Thunder = 151,
+    Low_Sleep = 152,
+    Med_Sleep = 153,
+    High_Sleep = 154,
+    Low_Rage = 155,
+    Med_Rage = 156,
+    High_Rage = 157,
+    Low_Despair = 158,
+    Med_Despair = 159,
+    Divine_Judgment = 160,
+    Samsara = 161,
+    High_Despair = 162,
+    Low_All_Ail = 163,
+    Med_All_Ail = 164,
+    High_All_Ail = 165,
+    Adam_Skill_1 = 166,
+    Revitalize_Soul = 167,
+    Grand_Palm = 168,
+    Full_Force = 169,
+    Demonic_Decree = 170,
+    Die_For_Me = 171,
+    Support_Plus_3 = 172,
+    Support_Plus_2 = 173,
+    Support_Plus_1 = 174,
+    Support_Rate_Up = 175,
+    Atomic_Flare = 176,
+    Cosmic_Flare = 177,
+    Mindfulness = 178,
+    Wakefulness = 179,
+    Black_Viper = 180,
+    Morning_Star = 181,
+    Abyssal_Eye = 182,
+    Champions_Cup = 183,
+    Bleeding_Dry_Brush = 184,
+    Vault_Guardian = 185,
+    Wings_of_Wisdom = 186,
+    Presidents_Insight = 187,
+    Gamblers_Foresight = 188,
+    Tyrants_Will = 189,
+    Psi = 190,
+    Psio = 191,
+    Psiodyne = 192,
+    Mapsi = 193,
+    Mapsio = 194,
+    Mapsiodyne = 195,
+    Attack_Position = 196,
+    Psycho_Force = 197,
+    Psycho_Blast = 198,
+    Universal_Power = 199,
+    Lunge = 200,
+    Assault_Dive = 201,
+    Megaton_Raid = 202,
+    Gods_Hand = 203,
+    Lunge_ID204 = 204,
+    Lucky_Punch = 205,
+    Miracle_Punch = 206,
+    Kill_Rush = 207,
+    Gatling_Blow = 208,
+    Piercing_Strike = 209,
+    Cleave = 210,
+    Giant_Slice = 211,
+    Brave_Blade = 212,
+    Sword_Dance = 213,
+    Holy_Benevolence = 214,
+    Hassou_Tobi = 215,
+    Ayamur = 216,
+    Death_Scythe = 217,
+    UNUSED = 218,
+    NOT_USED_ID219 = 219,
+    Cornered_Fang = 220,
+    Rising_Slash = 221,
+    Deadly_Fury = 222,
+    Nuclear_Crush = 223,
+    Snap = 224,
+    Triple_Down = 225,
+    One_shot_Kill = 226,
+    Riot_Gun = 227,
+    Double_Shot = 228,
+    Origin_Light = 229,
+    Vajra_Blast = 230,
+    Vorpal_Blade = 231,
+    NOT_USED_ID232 = 232,
+    NOT_USED_ID233 = 233,
+    NOT_USED_ID234 = 234,
+    Vicious_Strike = 235,
+    Heat_Wave = 236,
+    Gigantomachia = 237,
+    Swirling_Psychokinesis = 238,
+    Tyrants_Purge = 239,
+    Mass_Ball = 240,
+    Rampage = 241,
+    Swift_Strike = 242,
+    Deathbound = 243,
+    Agneyastra = 244,
+    NOT_USED_ID245 = 245,
+    Regeneration = 246,
+    Rising_Slash_ID247 = 247,
+    Deadly_Fury_ID248 = 248,
+    Tyrants_Judgement = 249,
+    Double_Fangs = 250,
+    Power_Slash = 251,
+    Shapeless_Guard = 252,
+    Tempest_Slash = 253,
+    Myriad_Slashes = 254,
+    Amplify_Force = 255,
+    Amplify_Magic = 256,
+    Raining_Seeds = 257,
+    Energy_Stream = 258,
+    Flow = 259,
+    Sledgehammer = 260,
+    Skull_Cracker = 261,
+    Terror_Claw = 262,
+    Headbutt = 263,
+    Stomach_Blow = 264,
+    Dream_Needle = 265,
+    Hysterical_Slap = 266,
+    Negative_Pile = 267,
+    Brain_Shake = 268,
+    Attack_ID269 = 269,
+    Flash_Bomb = 270,
+    Mind_Slice = 271,
+    Bloodbath = 272,
+    Memory_Blow = 273,
+    Insatiable_Strike = 274,
+    Dormin_Rush = 275,
+    Oni_Kagura = 276,
+    Bad_Beat = 277,
+    Brain_Buster = 278,
+    Laevateinn = 279,
+    Handgun = 280,
+    Shotgun = 281,
+    Slingshot = 282,
+    Machine_Gun = 283,
+    Assault_Rifle = 284,
+    Revolver = 285,
+    Grenade_Launcher = 286,
+    Laser_Gun = 287,
+    Antique_Rifle = 288,
+    Tyrant_Stance = 289,
+    Fighting_Spirit = 290,
+    Miracle_Rush = 291,
+    Checkmate = 292,
+    Hyakka_Ryouran = 293,
+    High_Energy = 294,
+    Ultimate_Support = 295,
+    Life_Wall = 296,
+    Rebellion_Blade = 297,
+    Masquerade = 298,
+    Guiding_Tendril = 299, // () [] {} #this thing also provides the same effect as Life Aid. The item claims it gives Life Aid passive, but that's a lie, it's a separate effect and in fact should stack with Life Aid. All the will seed item skills have passive effect built into them. : Lightboom
+    Dia = 300,
+    Diarama = 301,
+    Diarahan = 302,
+    Brave_Step = 303,
+    Maruki_Punch = 304,
+    Media = 305,
+    Mediarama = 306,
+    Mediarahan = 307,
+    Brutal_Impact = 308,
+    Cursed_Strike = 309,
+    Recarm = 310,
+    Samarecarm = 311,
+    Recarmdra = 312,
+    Sleuthing_Instinct = 313,
+    Sleuthing_Mastery = 314,
+    Amrita_Drop = 315,
+    Amrita_Shower = 316,
+    Holy_Strike = 317,
+    Salvation = 318,
+    Nuclear_Strike = 319,
+    Psychokinesis_Strike = 320,
+    Taunting_Aura = 321,
+    Storm_Punishment = 322,
+    Concealment = 323,
+    Lightning_Punishment = 324,
+    Patra = 325,
+    Punishing_Hail = 326,
+    Energy_Shower = 327,
+    Energy_Drop = 328,
+    Baisudi = 329,
+    Me_Patra = 330,
+    Mabaisudi = 331,
+    Charge_Ball = 332,
+    Concentrated_Ball = 333,
+    Inferno_Punishment = 334,
+    Tarukaja = 335,
+    Rakukaja = 336,
+    Sukukaja = 337,
+    Heat_Riser = 338,
+    Gunfire_Punishment = 339,
+    Matarukaja = 340,
+    Marakukaja = 341,
+    Masukukaja = 342,
+    Thermopylae = 343,
+    Guillotine_Punishment = 344,
+    Tarunda = 345,
+    Rakunda = 346,
+    Sukunda = 347,
+    Debilitate = 348,
+    Quadruple_Summon = 349,
+    Matarunda = 350,
+    Marakunda = 351,
+    Masukunda = 352,
+    Analysis_ID353 = 353,
+    Analysis_ID354 = 354,
+    Dekunda = 355,
+    Dekaja = 356,
+    Explosion_ID357 = 357,
+    Explosion_ID358 = 358,
+    Sphinx_Swipe_ID359 = 359,
+    Charge = 360,
+    Concentrate = 361,
+    Nose_Dive = 362,
+    Kill_Reward_Up = 363,
+    Guard_Reward_Up = 364,
+    Rebellion = 365,
+    Revolution = 366,
+    Make_it_Rain_ID367 = 367,
+    Special_Guards = 368,
+    Fake_Artists_Grace = 369,
+    Tetrakarn = 370,
+    Makarakarn = 371,
+    Tetraja = 372,
+    Taste_of_Wrath = 373,
+    True_Fake = 374,
+    Tetra_Break = 375,
+    Makara_Break = 376,
+    Killshot_of_Love = 377,
+    NOT_USED_ID378 = 378,
+    NOT_USED_ID379 = 379,
+    Fire_Wall = 380,
+    Ice_Wall = 381,
+    Elec_Wall = 382,
+    Wind_Wall = 383,
+    BLANK_ID384 = 384,
+    Fire_Break = 385,
+    Ice_Break = 386,
+    Wind_Break = 387,
+    Elec_Break = 388,
+    BLANK_ID389 = 389,
+    Trafuri = 390,
+    Traesto = 391,
+    Active_Barrier = 392,
+    Nuke_Wall = 393,
+    Psy_Wall = 394,
+    Nuke_Break = 395,
+    Psy_Break = 396,
+    BLANK_ID397 = 397,
+    BLANK_ID398 = 398,
+    Flow_ID399 = 399,
+    All_out_Lv_1 = 400,
+    All_out_Lv_2 = 401,
+    All_out_Lv_3 = 402,
+    Emergency_Escape = 403,
+    Attack_ID404 = 404,
+    Down_Shot = 405,
+    Summon = 406,
+    Call_for_Backup = 407,
+    Outlaw_Attack = 408,
+    Barrage = 409,
+    Follow_Crush = 410,
+    Follow_Claw = 411,
+    Follow_Whip = 412,
+    Follow_Blade = 413,
+    Follow_Knuckle = 414,
+    Follow_Axe = 415,
+    Follow_Saber = 416,
+    Dispose_Item = 417,
+    Heal_Enemy = 418,
+    Death_VIA_Despair = 419,
+    Member_1_Pursue_Up = 420,
+    Member_2_Pursue_Up = 421,
+    Member_3_Pursue_Up = 422,
+    Member_4_Pursue_Up = 423,
+    Member_5_Pursue_Up = 424,
+    Member_6_Pursue_Up = 425,
+    Member_7_Pursue_Up = 426,
+    Power_Up_Enemy_ID427 = 427,
+    Power_Up_Enemy_ID428 = 428,
+    Power_Up_Enemy_ID429 = 429,
+    Steal_Info = 430,
+    Sup_Matarukaja = 431,
+    Sup_Marakukaja = 432,
+    Sup_Masukukaja = 433,
+    Sup_All_Kaja = 434,
+    Sup_Charge = 435,
+    Sup_HP_30 = 436,
+    Sup_SP_10 = 437,
+    Sup_Escape_Route = 438,
+    Sup_Third_Eye = 439,
+    Subrecover_HP = 440,
+    Subrecover_SP = 441,
+    Analysis_ID442 = 442,
+    Deep_Analysis = 443,
+    Full_Analysis = 444,
+    All_Out_Attack = 445,
+    Dust_Flurry = 446,
+    Tongue_Whip = 447,
+    Whip_Strike = 448,
+    Lustful_Slurp = 449,
+    Libido_Boost = 450,
+    Golden_Knife = 451,
+    Lick = 452,
+    Gold_Medal_Spike = 453,
+    Volleyball_Assault = 454,
+    Maelstrom = 455,
+    Flame_Dance = 456,
+    Silent_Snowscape = 457,
+    Thunderclap = 458,
+    Maeiga_ID459 = 459,
+    Hunger_All = 460,
+    Ocular_Vulcan = 461,
+    Missile_Party = 462,
+    Fear_Gas = 463,
+    Super_VIP_Form = 464,
+    March_of_the_Piggy = 465,
+    Sphinx_Swipe_ID466 = 466,
+    Wing_Blast = 467,
+    Rapid_Ascent = 468,
+    Sphinx_Dive = 469,
+    Dreadful_Scream = 470,
+    Bite = 471,
+    Restore = 472,
+    The_Artists_Grace = 473,
+    Work_Order = 474,
+    Sacrifice_Order = 475,
+    Selfless_Devotion = 476,
+    Penalty = 477,
+    Coin_Attack = 478,
+    Severing_Slash = 479,
+    Gatling_Gun = 480,
+    Berserker_Dance = 481,
+    Roulette_HP = 482,
+    Roulette_SP = 483,
+    Roulette_Money = 484,
+    Roulette_Support_1 = 485,
+    Roulette_Support_2 = 486,
+    Roulette_Support_3 = 487,
+    Beast_Kings_Wrath = 488,
+    Hunting_Stance = 489,
+    Arm_of_Destruction = 490,
+    Gryphons_Breath = 491,
+    Royal_Wing_Beam = 492,
+    Cannon_Fire = 493,
+    Cannon_Barrage = 494,
+    Unholy_Convergence = 495,
+    Pyramid_Blast = 496,
+    Tyrants_Fist = 497,
+    Tyrants_Glare = 498,
+    Tyrants_Wave = 499,
+    Fig_Seed = 500,
+    Medicine = 501,
+    Ointment = 502,
+    Antibiotic_Gel = 503,
+    Life_Stone = 504,
+    Bead = 505,
+    Value_Medicine = 506,
+    Medical_Kit = 507,
+    Maka_Leaf = 508,
+    Bead_Chain = 509,
+    Soul_Drop = 510,
+    Snuff_Soul = 511,
+    Chewing_Soul = 512,
+    Soul_Food = 513,
+    Revival_Bead = 514,
+    Balm_of_Life = 515,
+    Royal_Jelly = 516,
+    Organic_Herb = 517,
+    Disclose = 518,
+    Tranquilizer = 519,
+    Kopi_Luwak = 520,
+    Goho_M = 521,
+    Vanish_Ball = 522,
+    Soma = 523,
+    Amrita_Soda = 524,
+    Hiranya = 525,
+    Muscle_Drink = 526,
+    Odd_Morsel = 527,
+    Rancid_Gravy = 528,
+    Plume_of_Dusk = 529,
+    Magic_Mirror = 530,
+    Physical_Mirror = 531,
+    Universe_Ring = 532,
+    Sleipnir = 533,
+    Obsidian_Mirror = 534,
+    Purifying_Water = 535,
+    Purifying_Salt = 536,
+    Firecracker = 537,
+    San_zun_Tama = 538,
+    Ice_Cube = 539,
+    Dry_Ice = 540,
+    Pinwheel = 541,
+    Yashichi = 542,
+    Ball_Lightning = 543,
+    Tesla_Coil = 544,
+    Smart_Bomb = 545,
+    Segami_Rice = 546,
+    Curse_Paper = 547,
+    Flame_Magatama = 548,
+    Wind_Magatama = 549,
+    Freeze_Magatama = 550,
+    Bolt_Magatama = 551,
+    Homunculus = 552,
+    Removal_Potion = 553,
+    Kouga_Ball = 554,
+    Makouha_Ball = 555,
+    Eiga_Ball = 556,
+    Maeiga_Ball = 557,
+    Psio_Ball = 558,
+    Mapsi_Ball = 559,
+    Freila_Ball = 560,
+    Mafrei_Ball = 561,
+    Nuke_Magatama = 562,
+    Psy_Magatama = 563,
+    Bless_Magatama = 564,
+    Curse_Magatama = 565,
+    Cooking = 566,
+    Snack = 567,
+    Juice_1 = 568,
+    Juice_2 = 569,
+    Juice_3 = 570,
+    Juicer_Bar_1 = 571,
+    Juicer_Bar_2 = 572,
+    Juicer_Bar_3 = 573,
+    Juicer_Bar_4 = 574,
+    Health_Drink_1 = 575,
+    Health_Drink_2 = 576,
+    Health_Drink_3 = 577,
+    Canned_Juice_1 = 578,
+    Canned_Juice_2 = 579,
+    Canned_Juice_3 = 580,
+    Canned_Juice_4 = 581,
+    Military_Food_1 = 582,
+    Military_Food_2 = 583,
+    Military_Food_3 = 584,
+    Drug_Store_1 = 585,
+    Drug_Store_2 = 586,
+    Drug_Store_3 = 587,
+    Drug_Store_4 = 588,
+    Drug_Store_5 = 589,
+    Drug_Store_6 = 590,
+    Drug_Store_7 = 591,
+    Drug_Store_8 = 592,
+    Drug_Store_9 = 593,
+    Drug_Store_10 = 594,
+    Drug_Store_11 = 595,
+    Drug_Store_12 = 596,
+    Special_Coffee_1 = 597,
+    Special_Coffee_2 = 598,
+    Double_Fangs_ID599 = 599,
+    Twins_Down_Attack = 600,
+    Caro_Rod = 601,
+    Caro_Attack = 602,
+    Megidolaon_ID603 = 603,
+    Rays_of_Control_ID604 = 604,
+    Rays_of_Control_ID605 = 605,
+    Rays_of_Control_ID606 = 606,
+    Rays_of_Control_ID607 = 607,
+    Arrow_of_Light = 608,
+    Diffraction_Arrow = 609,
+    Light_Edge = 610,
+    Gathering_Light = 611,
+    Eternal_Light = 612,
+    Holy_Change = 613,
+    Distortion_Wave = 614,
+    Tough_Law = 615,
+    Frail_Law = 616,
+    New_Creation = 617,
+    Distortion_Surge = 618,
+    Arrow_of_Light_ID619 = 619,
+    Manifest_Sword = 620,
+    Manifest_Gun = 621,
+    Manifest_Bell = 622,
+    Sword_of_Judgment = 623,
+    Capital_Punishment = 624,
+    Manifest_Book = 625,
+    Distorted_Lust = 626,
+    Gospel = 627,
+    Distorted_Wrath = 628,
+    Distorted_Vanity = 629,
+    Song_of_Salvation = 630,
+    Wrath_of_God = 631,
+    Distorted_Gluttony = 632,
+    Distorted_Envy = 633,
+    Song_of_Placation = 634,
+    Divine_Apex = 635,
+    Rays_of_Control = 636,
+    Distorted_Avarice = 637,
+    Will_of_the_People = 638,
+    Rays_of_Control_ID639 = 639,
+    Moral_Support = 640,
+    Active_Support = 641,
+    Mental_Hack = 642,
+    Emergency_Shift = 643,
+    Final_Guard = 644,
+    Position_Hack = 645,
+    Fitness_Talk = 646,
+    Treasure_Skimmer = 647,
+    Subrecover_HP_EX = 648,
+    Subrecover_SP_EX = 649,
+    Big_Bang_Treat = 650,
+    Explosion_ID651 = 651,
+    Explosion_ID652 = 652,
+    Explosion_ID653 = 653,
+    Big_Bang_Order = 654,
+    Roulette_Time = 655,
+    Trip_Upper = 656,
+    Shot_of_Lust = 657,
+    Down_Shot_2 = 658,
+    Down_Shot_3 = 659,
+    Down_Shot_4 = 660,
+    Electro_Attack = 661,
+    Sinful_Shell = 662,
+    Follow_Blade_ID663 = 663,
+    Summon_ID664 = 664,
+    Madara_Megido = 665,
+    Curry_Raku = 666,
+    Enemy_Benefit = 667,
+    Diarahan_ID668 = 668,
+    Curry_Suku = 669,
+    Decoy_Ball = 670,
+    Super_Decoy_Ball = 671,
+    Metabolic_Wave = 672,
+    Laevateinn_ID673 = 673,
+    Desperation = 674,
+    Call_of_Chaos = 675,
+    Big_Bang_Challenge = 676,
+    Grail_Light_2 = 677,
+    Megidola_ID678 = 678,
+    Rage_Transmission = 679,
+    Hundred_Slaps = 680,
+    Distorted_Pride = 681,
+    Divine_Punishment = 682,
+    Will_of_the_People_ID683 = 683,
+    Wind_Cutter = 684,
+    Shoot_Up = 685,
+    Executive_Punch = 686,
+    Megidolaon_ID687 = 687,
+    Vorpal_Blade_ID688 = 688,
+    Megidolaon_ID689 = 689,
+    Big_Bang_Burger = 690,
+    Earth_Burger = 691,
+    Mars_Burger = 692,
+    Moon_Burger = 693,
+    Saturn_Burger = 694,
+    Justine_Attack = 695,
+    Caroline_Attack = 696,
+    Curry_Makara = 697,
+    Curry_Tetra = 698,
+    Curry_Endure = 699,
+    Curry_Charge = 700,
+    Curry_Concentrate = 701,
+    Curry_Heat_Riser = 702,
+    Magic_Wall = 703,
+    Cadenza = 704,
+    Cross_Slash = 705,
+    Door_of_Hades = 706,
+    Magatsu_Mandala = 707,
+    Shining_Arrows = 708,
+    Beast_Weaver = 709,
+    Titanomachia = 710,
+    Abyssal_Wings = 711,
+    Oratario = 712,
+    Myriad_Truths = 713,
+    Neo_Cadenza = 714,
+    Akashic_Arts = 715,
+    Phantom_Show = 716,
+    Confuse_Ball = 717,
+    Baptism_Ball = 718,
+    Exorcism_Ball = 719,
+    Megido_ID720 = 720,
+    Megidola_ID721 = 721,
+    Megidolaon_ID722 = 722,
+    Slam = 723,
+    Megaton_Raid_ID724 = 724,
+    One_shot_Kill_ID725 = 725,
+    Inferno_ID726 = 726,
+    Diamond_Dust_ID727 = 727,
+    Eternal_Radiance = 728,
+    Tyrant_Chaos = 729,
+    New_Curry_1 = 730,
+    New_Curry_2 = 731,
+    Reviv_All = 732,
+    Reviv_All_Z = 733,
+    Dark_Akechi_For_pursuing = 734,
+    Dark_Akechi_For_Gun_pursuing = 735,
+    Wild_Talk = 736,
+    Baton_Pass = 737,
+    Punk_Talk = 738,
+    Pickpocket = 739,
+    Harisen_Recovery = 740,
+    Protect = 741,
+    Girl_Talk = 742,
+    Crocodile_Tears = 743,
+    Sexy_Technique = 744,
+    Smooth_Talk = 745,
+    Art_Talk = 746,
+    Diplomacy = 747,
+    Fundraising = 748,
+    Manipulation = 749,
+    Mind_Control = 750,
+    Charismatic_Speech = 751,
+    Black_Belt_Talk = 752,
+    Koma_Sabaki = 753,
+    Kakoi_Kuzushi = 754,
+    Touryou = 755,
+    Togo_System = 756,
+    Bullet_Hail = 757,
+    Warning_Shot = 758,
+    Celeb_Talk = 759,
+    Kitty_Talk = 760,
+    Marin_Karin_ID761 = 761,
+    Womanizing = 762,
+    Indignant_Revenge = 763,
+    Healing_Power = 764,
+    Healing_Power_ID765 = 765,
+    Taunt_ID766 = 766,
+    Iridescent_Change = 767,
+    Brave_Blade_ID768 = 768,
+    Assault_Dive_ID769 = 769,
+    Terror_Claw_ID770 = 770,
+    Bufudyne_ID771 = 771,
+    Psiodyne_ID722 = 772,
+    Mazionga_ID773 = 773,
+    Maziodyne_ID774 = 774,
+    Maeiga_ID775 = 775,
+    Maeigaon_ID776 = 776,
+    Adam_Skill_5 = 777,
+    Adam_Skill_6 = 778,
+    Vorpal_Blade_ID779 = 779,
+    Mona_Ryuji_Unison_Attack = 780,
+    Mona_Ann_Unison_Attack = 781,
+    Mona_Haru_Unison_Attack = 782,
+    Yusuke_Ann_Unison_Attack = 783,
+    Ryuji_Yusuke_Unison_Attack = 784,
+    Ryuji_Makoto_Unison_Attack = 785,
+    Protag_Akechi_Unison_Attack = 786,
+    Makoto_Haru_Unison_Attack = 787,
+    Unused_Akechi_Unison_Attack = 788,
+    Protag_Kasumi_Unison_Attack = 789,
+    Mona_Ryuji_Unison_Attack_ID790 = 790,
+    Mona_Ann_Unison_Attack_ID791 = 791,
+    Mona_Haru_Unison_Attack_ID792 = 792,
+    Yusuke_Ann_Unison_Attack_ID793 = 793,
+    Ryuji_Yusuke_Unison_Attack_ID794 = 794,
+    Ryuji_Makoto_Unison_Attack_ID795 = 795,
+    Protag_Akechi_Unison_Attack_ID796 = 796,
+    Makoto_Haru_Unison_Attack_ID797 = 797,
+    Unused_Akechi_Unison_Attack_ID798 = 798,
+    Protag_Kasumi_Unison_Attack_ID799 = 799,
+    Counter = 800,
+    Counterstrike = 801,
+    High_Counter = 802,
+    Resist_Burn = 803,
+    Null_Burn = 804,
+    Endure = 805,
+    Enduring_Soul = 806,
+    Resist_Freeze = 807,
+    Null_Freeze = 808,
+    Survival_Trick = 809,
+    Dodge_Fire = 810,
+    Evade_Fire = 811,
+    Dodge_Ice = 812,
+    Evade_Ice = 813,
+    Dodge_Wind = 814,
+    Evade_Wind = 815,
+    Dodge_Elec = 816,
+    Evade_Elec = 817,
+    Dodge_Phys = 818,
+    Evade_Phys = 819,
+    Fire_Boost = 820,
+    Fire_Amp = 821,
+    Ice_Boost = 822,
+    Ice_Amp = 823,
+    Wind_Boost = 824,
+    Wind_Amp = 825,
+    Elec_Boost = 826,
+    Elec_Amp = 827,
+    Angelic_Grace = 828,
+    Divine_Grace = 829,
+    Regenerate_1 = 830,
+    Regenerate_2 = 831,
+    Regenerate_3 = 832,
+    Dodge_Bless = 833,
+    Dodge_Curse = 834,
+    Invigorate_1 = 835,
+    Invigorate_2 = 836,
+    Invigorate_3 = 837,
+    Evade_Bless = 838,
+    Evade_Curse = 839,
+    Attack_Master = 840,
+    Auto_Mataru = 841,
+    Resist_Shock = 842,
+    Defense_Master = 843,
+    Auto_Maraku = 844,
+    Null_Shock = 845,
+    Speed_Master = 846,
+    Auto_Masuku = 847,
+    Resist_Hunger = 848,
+    Null_Hunger = 849,
+    Fast_Heal = 850,
+    Insta_Heal = 851,
+    Arms_Master = 852,
+    Spell_Master = 853,
+    Rage_Atk_Up = 854,
+    Sharp_Student = 855,
+    Apt_Pupil = 856,
+    Ali_Dance = 857,
+    Firm_Stance = 858,
+    Plus50Percent_EXP = 859,
+    Life_Aid = 860,
+    Victory_Cry = 861,
+    Growth_1 = 862,
+    Growth_2 = 863,
+    Growth_3 = 864,
+    Unshaken_Will = 865,
+    Null_Bless_Insta_kill = 866,
+    Baton_Pass_ID867 = 867,
+    Soul_Touch_Unused = 868,
+    Kakoi_Kuzushi_ID869 = 869,
+    Resist_Fire = 870,
+    Null_Fire = 871,
+    Repel_Fire = 872,
+    Drain_Fire = 873,
+    Null_Curse_Insta_kill = 874,
+    Resist_Ice = 875,
+    Null_Ice = 876,
+    Repel_Ice = 877,
+    Drain_Ice = 878,
+    Plus15Percent_EXP = 879,
+    Resist_Wind = 880,
+    Null_Wind = 881,
+    Repel_Wind = 882,
+    Drain_Wind = 883,
+    All_Out_Attack_Boost = 884,
+    Resist_Elec = 885,
+    Null_Elec = 886,
+    Repel_Elec = 887,
+    Drain_Elec = 888,
+    Money_Boost = 889,
+    Resist_Bless = 890,
+    Null_Bless = 891,
+    Repel_Bless = 892,
+    Drain_Bless = 893,
+    Hide = 894,
+    Resist_Curse = 895,
+    Null_Curse = 896,
+    Repel_Curse = 897,
+    Drain_Curse = 898,
+    Life_Boost = 899,
+    Resist_Phys = 900,
+    Null_Phys = 901,
+    Repel_Phys = 902,
+    Drain_Phys = 903,
+    Null_BlessANDCurse = 904,
+    Ailment_Boost = 905,
+    Hama_Boost = 906,
+    Mudo_Boost = 907,
+    Gun_Accuracy_Plus5Percent = 908,
+    Samurai_Spirit = 909,
+    Dizzy_Boost = 910,
+    Confuse_Boost = 911,
+    Fear_Boost = 912,
+    Forget_Boost = 913,
+    Sleep_Boost = 914,
+    Rage_Boost = 915,
+    Despair_Boost = 916,
+    Kuzunoha_Emblem = 917,
+    Brainwash_Boost = 918,
+    Critical_Rate_Up_High = 919,
+    Resist_Dizzy = 920,
+    Resist_Confuse = 921,
+    Resist_Fear = 922,
+    Resist_Forget = 923,
+    Resist_Sleep = 924,
+    Resist_Rage = 925,
+    Resist_Despair = 926,
+    Fusion_Accident_Up = 927,
+    Resist_Brainwash = 928,
+    Tyrants_Mind = 929,
+    Null_Dizzy = 930,
+    Null_Confuse = 931,
+    Null_Fear = 932,
+    Null_Forget = 933,
+    Null_Sleep = 934,
+    Null_Rage = 935,
+    Null_Despair = 936,
+    Holy_Whisper = 937,
+    Null_Brainwash = 938,
+    Holy_Embrace = 939,
+    Burn_Boost = 940,
+    Freeze_Boost = 941,
+    Shock_Boost = 942,
+    BLANK_ID943 = 943,
+    Fortified_Moxy = 944,
+    Adverse_Resolve = 945,
+    Last_Stand = 946,
+    Heat_Up = 947,
+    BLANK_ID948 = 948,
+    Touch_n_Go = 949,
+    Climate_Decorum = 950,
+    Ambient_Aid = 951,
+    RESERVE_ID952 = 952,
+    Gun_Boost = 953,
+    Gun_Amp = 954,
+    Trigger_Happy = 955,
+    Resist_Nuke = 956,
+    Null_Nuke = 957,
+    Repel_Nuke = 958,
+    Drain_Nuke = 959,
+    RESERVE_ID960 = 960,
+    Resist_Psy = 961,
+    Null_Psy = 962,
+    Repel_Psy = 963,
+    Drain_Psy = 964,
+    RESERVE_ID965 = 965,
+    Nuke_Boost = 966,
+    Nuke_Amp = 967,
+    RESERVE_ID968 = 968,
+    Psy_Boost = 969,
+    Psy_Amp = 970,
+    Sexy_Technique_ID971 = 971,
+    Dodge_Nuke = 972,
+    Evade_Nuke = 973,
+    Detox = 974,
+    Dodge_Psy = 975,
+    Evade_Psy = 976,
+    Detox_ID977 = 977,  //"BLANK" [Likely Detox X] {03D1} (0977)
+    Bless_Boost = 978,
+    Bless_Amp = 979,
+    RESERVE_ID980 = 980,
+    Curse_Boost = 981,
+    Curse_Amp = 982,
+    Not_Found_by_Enemy = 983,
+    Magic_Ability = 984,
+    Fortify_Spirit = 985,
+    Almighty_Boost = 986,
+    Almighty_Amp = 987,
+    Zenith_Defense = 988,
+    Soul_Chain = 989,
+    Vanity_Copy = 990,
+    Gluttonous_Snuff = 991,
+    Sloth_Defense = 992,
+    Brush_of_Vanity = 993,
+    Life_Rise = 994,
+    Mana_Rise = 995,
+    Soul_Touch = 996,
+    Victory_Cry_ID997 = 997,    //"Victory Cry" [] {03E5} (0977) #I think this is the same as Life Aid, and again should stack with it. : Lightboom
+    Trait_DLC_for_Bitedown = 998,
+    BLANK_ID999 = 999,
+    Ailment_Effect_Up = 1000,
+    Ailment_Effect_UpPlus = 1001,
+    Instakill_SP_Heal_Low = 1002,
+    Instakill_SP_Heal_Mid = 1003,
+    Instakill_SP_Heal_High = 1004,
+    Technical_Effect_Up = 1005,
+    Technical_Effect_UpPlus = 1006,
+    Low_HP_Attack_Up = 1007,
+    Low_HP_Attack_UpPlus = 1008,
+    WEAK_Hit_Effect_Up = 1009,
+    WEAK_Hit_Effect_UpPlus = 1010,
+    Null_Insta_kill = 1011,
+    HP_Cost_Down_10Percent = 1012,
+    HP_Cost_Down_25Percent = 1013,
+    SP_Cost_Down_10Percent = 1014,
+    SP_Cost_Down_25Percent = 1015,
+    Heal_Magic_Up_10Percent = 1016,
+    Heal_Magic_Up_25Percent = 1017,
+    Chance_of_0_HP_Cost = 1018,
+    Chance_of_0_SP_Cost = 1019,
+    Target_ATK_Up = 1020,
+    Target_ATK_UpPlus = 1021,
+    All_Crits_No_Evasion = 1022,
+    Heal_Cost_Down_25Percent = 1023,
+    Heal_Cost_Down_10Percent = 1024,
+    ATK_Up,_Aim_Down = 1025,
+    Ailment_Success_Up = 1026,
+    BLANK_ID1027 = 1027,
+    Four_Affinity_Boost = 1028,
+    Three_Affinity_Light_Boost = 1029,
+    Support_Turn_Extend = 1030,
+    Insta_kill_Up = 1031,
+    Insta_kill_UpPlus = 1032,
+    Life_Bonus = 1033,
+    Life_Gain = 1034,
+    Life_Surge = 1035,
+    Mana_Bonus = 1036,
+    Mana_Gain = 1037,
+    Mana_Surge = 1038,
+    Critical_Effect_Up = 1039,
+    Critical_Effect_UpPlus = 1040,
+    Hit_Damage_Doubled = 1041,
+    All_Target_ATK_Up = 1042,
+    All_Target_ATK_UpPlus = 1043,
+    Auto_Barrier = 1044,
+    Backup_Support = 1045,
+    Absolute_Escape = 1046,
+    Shield_of_Loyalty = 1047,
+    All_Amp = 1048,
+    BLANK_ID1049 = 1049,
+    BLANK_ID1050 = 1050,
+    BLANK_ID1051 = 1051,
+    BLANK_ID1052 = 1052,
+    BLANK_ID1053 = 1053,
+    BLANK_ID1054 = 1054,
+    BLANK_ID1055 = 1055,
+    BLANK_ID1056 = 1056
+}
+
+
+//Enumeration Guide :
+//Call and search for personas via name or id, all special characters have been removed (eg Arséne is now Arsene) as well as spaces and dashes (They are underscores now, or should be anyway), untranslated names have been converted to Unknown and some have been removed,
+//more details are at those cases and there shall be no documentation on the personas. As always Dupes have been given the _IDxxxx
+enum Persona {
+    Zero = 0, // [] {} ()
+    Metatron = 1, // [] {} ()
+    Beelzebub = 2, // [] {} ()
+    Cu_Chulainn = 3, // [] {} ()
+    JackoLantern = 4, // [] {} ()
+    Jack_Frost = 5, // [] {} ()
+    Pixie = 6, // [] {} ()
+    Cerberus = 7, // [] {} ()
+    Lilim = 8, // [] {} ()
+    Eligor = 9, // [] {} ()
+    Odin = 10, // [] {} ()
+    Hua_Po = 11, // [] {} ()
+    Decarabia = 12, // [] {} ()
+    Mara = 13, // [] {} ()
+    Ose = 14, // [] {} ()
+    Thor = 15, // [] {} ()
+    Unicorn = 16, // [] {} ()
+    Uriel = 17, // [] {} ()
+    Sarasvati = 18, // [] {} ()
+    Valkyrie = 19, // [] {} ()
+    Yaksini = 20, // [] {} ()
+    Ganesha = 21, // [] {} ()
+    Anubis = 22, // [] {} ()
+    Mot = 23, // [] {} ()
+    Raphael = 24, // [] {} ()
+    Scathach = 25, // [] {} ()
+    High_Pixie = 26, // [] {} ()
+    Barong = 27, // [] {} ()
+    Girimehkala = 28, // [] {} ()
+    King_Frost = 29, // [] {} ()
+    Narcissus = 30, // [] {} ()
+    Isis = 31, // [] {} ()
+    Lamia = 32, // [] {} ()
+    Legion = 33, // [] {} ()
+    Rakshasa = 34, // [] {} ()
+    Mokoi = 35, // [] {} ()
+    Forneus = 36, // [] {} ()
+    Setanta = 37, // [] {} ()
+    Titania = 38, // [] {} ()
+    Incubus = 39, // [] {} ()
+    Oni = 40, // [] {} ()
+    Lilith = 41, // [] {} ()
+    Rangda = 42, // [] {} ()
+    Makami = 43, // [] {} ()
+    Parvati = 44, // [] {} ()
+    Gabriel = 45, // [] {} ()
+    Zaou_Gongen = 46, // [] {} ()
+    Alice = 47, // [] {} ()
+    Kali = 48, // [] {} ()
+    Kurama_Tengu = 49, // [] {} ()
+    Oberon = 50, // [] {} ()
+    Shiki_Ouji = 51, // [] {} ()
+    Yamata_no_Orochi = 52, // [] {} ()
+    Orobas = 53, // [] {} ()
+    Hanuman = 54, // [] {} ()
+    Archangel = 55, // [] {} ()
+    Obariyon = 56, // [] {} ()
+    Queen_Mab = 57, // [] {} ()
+    Sandalphon = 58, // [] {} ()
+    Abaddon = 59, // [] {} ()
+    Shiisaa = 60, // [] {} ()
+    Sandman = 61, // [] {} ()
+    Belial = 62, // [] {} ()
+    Leanan_Sidhe = 63, // [] {} ()
+    Cybele = 64, // [] {} ()
+    Chernobog = 65, // [] {} ()
+    Flauros = 66, // [] {} ()
+    Ippon_Datara = 67, // [] {} ()
+    Orthrus = 68, // [] {} ()
+    Succubus = 69, // [] {} ()
+    Mothman = 70, // [] {} ()
+    RESERVE_ID71 = 71, // [] {} ()
+    Dominion = 72, // [] {} ()
+    Nekomata = 73, // [] {} ()
+    Black_Frost = 74, // [] {} ()
+    Arahabaki = 75, // [] {} ()
+    Angel = 76, // [] {} ()
+    Skadi = 77, // [] {} ()
+    Kikuri_Hime = 78, // [] {} ()
+    Chi_You = 79, // [] {} ()
+    Power = 80, // [] {} ()
+    Inugami = 81, // [] {} ()
+    Nebiros = 82, // [] {} ()
+    RESERVE_ID83 = 83, // [] {} ()
+    Slime = 84, // [] {} ()
+    Anzu = 85, // [] {} ()
+    Yatagarasu = 86, // [] {} ()
+    Yoshitsune = 87, // [] {} ()
+    Take_Minakata = 88, // [] {} ()
+    Ame_no_Uzume = 89, // [] {} ()
+    Kushinada = 90, // [] {} ()
+    Kumbhanda = 91, // [] {} ()
+    Ongyo_Ki = 92, // [] {} ()
+    Kin_Ki = 93, // [] {} ()
+    Sui_Ki = 94, // [] {} ()
+    Fuu_Ki = 95, // [] {} ()
+    Jatayu = 96, // [] {} ()
+    Kaiwan = 97, // [] {} ()
+    Kelpie = 98, // [] {} ()
+    Thoth = 99, // [] {} ()
+    Dionysus = 100, // [] {} ()
+    Apsaras = 101, // [] {} ()
+    Andras = 102, // [] {} ()
+    RESERVE_ID103 = 103, // [] {} ()
+    Koropokguru = 104, // [] {} ()
+    Koppa_Tengu = 105, // [] {} ()
+    Regent = 106, // [] {} ()
+    Queens_Necklace = 107, // [] {} ()
+    Stone_of_Scone = 108, // [] {} ()
+    Koh_i_Noor = 109, // [] {} ()
+    Orlov = 110, // [] {} ()
+    Emperors_Amulet = 111, // [] {} ()
+    Hope_Diamond = 112, // [] {} ()
+    Crystal_Skull = 113, // [] {} ()
+    Orichalcum = 114, // [] {} ()
+    RESERVE_ID115 = 115, // [] {} ()
+    RESERVE_ID116 = 116, // [] {} ()
+    RESERVE_ID117 = 117, // [] {} ()
+    RESERVE_ID118 = 118, // [] {} ()
+    RESERVE_ID119 = 119, // [] {} ()
+    RESERVE_ID120 = 120, // [] {} ()
+    Mandrake = 121, // [] {} ()
+    Baal = 122, // [] {} ()
+    Dakini = 123, // [] {} ()
+    Silky = 124, // [] {} ()
+    Bugs = 125, // [] {} ()
+    Black_Ooze = 126, // [] {} ()
+    Bicorn = 127, // [] {} ()
+    Mithras = 128, // [] {} ()
+    Sudama = 129, // [] {} ()
+    Kodama = 130, // [] {} ()
+    Agathion = 131, // [] {} ()
+    Onmoraki = 132, // [] {} ()
+    Nue = 133, // [] {} ()
+    Pisaca = 134, // [] {} ()
+    Melchizedek = 135, // [] {} ()
+    Baphomet = 136, // [] {} ()
+    Raja_Naga = 137, // [] {} ()
+    Naga = 138, // [] {} ()
+    Garuda = 139, // [] {} ()
+    Moloch = 140, // [] {} ()
+    Norn = 141, // [] {} ()
+    Belphegor = 142, // [] {} ()
+    Berith = 143, // [] {} ()
+    Choronzon = 144, // [] {} ()
+    RESERVE_ID145 = 145, // [] {} ()
+    RESERVE_ID146 = 146, // [] {} ()
+    RESERVE_ID147 = 147, // [] {} ()
+    RESERVE_ID148 = 148, // [] {} ()
+    RESERVE_ID149 = 149, // [] {} ()
+    RESERVE_ID150 = 150, // [] {} ()
+    Nigi_Mitama = 151, // [] {} ()
+    Kushi_Mitama = 152, // [] {} ()
+    Ara_Mitama = 153, // [] {} ()
+    Saki_Mitama = 154, // [] {} ()
+    RESERVE_ID155 = 155, // [] {} ()
+    Shiva = 156, // [] {} ()
+    Michael = 157, // [] {} ()
+    Asura = 158, // [] {} ()
+    Mada = 159, // [] {} ()
+    Mother_Harlot = 160, // [] {} ()
+    Clotho = 161, // [] {} ()
+    Lachesis = 162, // [] {} ()
+    Atropos = 163, // [] {} ()
+    Ardha = 164, // [] {} ()
+    RESERVE_ID165 = 165, // [] {} ()
+    Vishnu = 166, // [] {} ()
+    Hariti = 167, // [] {} ()
+    Yurlungur = 168, // [] {} ()
+    Hecatoncheires = 169, // [] {} ()
+    Satanael = 170, //Only Keeping this one here as the other 2 are completely unsuable, this is likely the one you're looking for anyway [] {} ()
+    RESERVE_ID171 = 171, // [] {} ()
+    RESERVE_ID172 = 172, // [] {} ()
+    RESERVE_ID173 = 173, // [] {} ()
+    RESERVE_ID174 = 174, // [] {} ()
+    RESERVE_ID175 = 175, // [] {} ()
+    RESERVE_ID176 = 176, // [] {} ()
+    RESERVE_ID177 = 177, // [] {} ()
+    RESERVE_ID178 = 178, // [] {} ()
+    RESERVE_ID179 = 179, // [] {} ()
+    RESERVE_ID180 = 180, // [] {} ()
+    Orpheus = 181, // [] {} ()
+    Thanatos = 182, // [] {} ()
+    Izanagi = 183, // [] {} ()
+    Magatsu_Izanagi = 184, // [] {} ()
+    Kaguya = 185, // [] {} ()
+    Ariadne = 186, // [] {} ()
+    Asterius = 187, // [] {} ()
+    Tsukiyomi = 188, // [] {} ()
+    Messiah = 189, // [] {} ()
+    Messiah_Picaro = 190, // [] {} ()
+    Orpheus_Picaro = 191, // [] {} ()
+    Thanatos_Picaro = 192, // [] {} ()
+    Izanagi_Picaro = 193, // [] {} ()
+    Magatsu_Izanagi_Picaro = 194, // [] {} ()
+    Kaguya_Picaro = 195, // [] {} ()
+    Ariadne_Picaro = 196, // [] {} ()
+    Asterius_Picaro = 197, // [] {} ()
+    Tsukiyomi_Picaro = 198, // [] {} ()
+    question_ID200 = 200, // [] {} ()
+    //All other teammate personas have been removed from this enum, for smilar reasons to satanael, these are the usable ones and likely the ones you want to call when making flow script if ever
+    //I also dont know if there are any adverse effects from editing them so....
+    Arsene = 201, // [] {} ()
+    Captain_Kidd = 202, // [] {} ()
+    Zorro = 203, // [] {} ()
+    Carmen = 204, // [] {} ()
+    Goemon = 205, // [] {} ()
+    Johanna = 206, // [] {} ()
+    Milady = 207, // [] {} ()
+    Necronomicon = 208, // [] {} ()
+    Robin_Hood = 209, // [] {} ()
+    Seiten_Taisei = 212, // [] {} ()
+    Mercurius = 213, // [] {} ()
+    Hecate = 214, // [] {} ()
+    Kamu_Susano_o = 215, // [] {} ()
+    Anat = 216, // [] {} ()
+    Astarte = 217, // [] {} ()
+    Prometheus = 218, // [] {} ()
+    Loki = 219, // [] {} ()
+    Question_ID229 = 229, // [] {} ()
+    Lucifer = 230, // [] {} ()
+    Cendrillon = 240, // [] {} ()
+    Vanadis = 241, // [] {} ()
+    William = 242, // [] {} ()
+    Diego = 243, // [] {} ()
+    Celestine = 244, // [] {} ()
+    Gorokichi = 245, // [] {} ()
+    Agnes = 246, // [] {} ()
+    Lucy = 247, // [] {} ()
+    Al_Azif = 248, // [] {} ()
+    Hereward = 249, // [] {} ()
+    Ella = 250, // [] {} ()
+    RESERVE_ID251 = 251, // [] {} ()
+    Satan = 252, // [] {} ()
+    Lucifer_ID253 = 253, // [] {} ()
+    Kohryu = 254, // [] {} ()
+    Okuninushi = 255, // [] {} ()
+    Norn_ID256 = 256, // [] {} ()
+    RESERVE_ID257 = 257, // [] {} ()
+    RESERVE_ID258 = 258, // [] {} ()
+    Futsunushi = 259, // [] {} ()
+    RESERVE_ID260 = 260, // [] {} ()
+    Seth = 261, // [] {} ()
+    Ishtar = 262, // [] {} ()
+    RESERVE_ID263 = 263, // [] {} ()
+    Surt = 264, // [] {} ()
+    Unknown_ID265 = 265, // [] {} ()
+    Lakshmi = 266, // [] {} ()
+    RESERVE_ID267 = 267, // [] {} ()
+    RESERVE_ID268 = 268, // [] {} ()
+    Ex_Belphegor = 269, // [] {} ()
+    RESERVE_ID270 = 270, // [] {} ()
+    Garuda_ID271 = 271, // [] {} ()
+    Fortuna = 272, // [] {} ()
+    Suzaku = 273, // [] {} ()
+    Seiryu = 274, // [] {} ()
+    Genbu = 275, // [] {} ()
+    Byakko = 276, // [] {} ()
+    Bishamonten = 277, // [] {} ()
+    Koumokuten = 278, // [] {} ()
+    Jikokuten = 279, // [] {} ()
+    Zouchouten = 280, // [] {} ()
+    Hell_Biker = 281, // [] {} ()
+    Daisoujou = 282, // [] {} ()
+    Trumpeter = 283, // [] {} ()
+    White_Rider = 284, // [] {} ()
+    Matador = 285, // [] {} ()
+    Pale_Rider = 286, // [] {} ()
+    Horus = 287, // [] {} ()
+    RESERVE_ID288 = 288, // [] {} ()
+    Attis = 289, // [] {} ()
+    RESERVE_ID290 = 290, // [] {} ()
+    RESERVE_ID291 = 291, // [] {} ()
+    Sraosha = 292, // [] {} ()
+    Berith_ID293 = 293, // [] {} ()
+    RESERVE_ID294 = 294, // [] {} ()
+    Mitra = 295, // [] {} ()
+    Phoenix = 296, // [] {} ()
+    Principality = 297, // [] {} ()
+    Neko_Shogun = 298, // [] {} ()
+    Vasuki = 299, // [] {} ()
+    Ananta = 300, // [] {} ()
+    Throne = 301, // [] {} ()
+    RESERVE_ID302 = 302, // [] {} ()
+    Quetzalcoatl = 303, // [] {} ()
+    Red_Rider = 304, // [] {} ()
+    Black_Rider = 305, // [] {} ()
+    RESERVE_ID306 = 306, // [] {} ()
+    Ex_Moloch = 307, // [] {} ()
+    Pazuzu = 308, // [] {} ()
+    Unknown_ID309 = 309, // [] {} ()
+    Slime_ID310 = 310, // [] {} ()
+    JackoLantern_ID311 = 311, // [] {} ()
+    Agathion_ID312 = 312, // [] {} ()
+    Mandrake_ID313 = 313, // [] {} ()
+    Shiisaa_ID314 = 314, // [] {} ()
+    Jack_Frost_ID315 = 315, // [] {} ()
+    Sudama_ID316 = 316, // [] {} ()
+    Onmoraki_ID317 = 317, // [] {} ()
+    Bugs_ID318 = 318, // [] {} ()
+    Pixie_ID319 = 319, // [] {} ()
+    Pixie_ID320 = 320, // [] {} ()
+    Ardha_ID321 = 321, // [] {} ()
+    RESERVE_ID322 = 322, // [] {} ()
+    Asmodeus = 323, // [] {} ()
+    Azazel = 324, // [] {} ()
+    Baal_ID325 = 325, // [] {} ()
+    Tithoes = 326, // [] {} ()
+    Mammon = 327, // [] {} ()
+    Leviathan = 328, // [] {} ()
+    Samael = 329, // [] {} ()
+    Maria = 330, // [] {} ()
+    Vohu_Manah = 331, // [] {} ()
+    Cait_Sith = 332, // [] {} ()
+    Mishaguji = 333, // [] {} ()
+    Unknown_ID334 = 334, // [] {} ()
+    Unknown_ID335 = 335, // [] {} ()
+    RESERVE_ID336 = 336, // [] {} ()
+    RESERVE_ID337 = 337, // [] {} ()
+    RESERVE_ID338 = 338, // [] {} ()
+    RESERVE_ID339 = 339, // [] {} ()
+    RESERVE_ID340 = 340, // [] {} ()
+    RESERVE_ID341 = 341, // [] {} ()
+    RESERVE_ID342 = 342, // [] {} ()
+    RESERVE_ID343 = 343, // [] {} ()
+    RESERVE_ID344 = 344, // [] {} ()
+    RESERVE_ID345 = 345, // [] {} ()
+    RESERVE_ID346 = 346, // [] {} ()
+    RESERVE_ID347 = 347, // [] {} ()
+    RESERVE_ID348 = 348, // [] {} ()
+    RESERVE_ID349 = 349, // [] {} ()
+    RESERVE_ID350 = 350, // [] {} ()
+    P5_Unused_ID351 = 351, // [] {} ()
+    P5_Unused_ID352 = 352, // [] {} ()
+    P5_Unused_ID353 = 353, // [] {} ()
+    P6_Unused_ID354 = 354, // [] {} ()
+    P5_Unused_ID355 = 355, // [] {} ()
+    P5_Unused_ID356 = 356, // [] {} ()
+    P5_Unused_ID357 = 357, // [] {} ()
+    P5_Unused_ID358 = 358, // [] {} ()
+    P5_Unused_ID359 = 359, // [] {} ()
+    Izanagi_no_Okami = 360, // [] {} ()
+    Psyche = 361, // [] {} ()
+    Athena = 362, // [] {} ()
+    Raoul = 363, // [] {} ()
+    Orpheus_Telos = 364, // [] {} ()
+    OrpheusF = 365, // [] {} ()
+    Izanagi_no_Okami_Picaro = 366, // [] {} ()
+    Psyche_Picaro = 367, // [] {} ()
+    Athena_Picaro = 368, // [] {} ()
+    Neo_Arsene_Picaro = 369, // [] {} ()
+    Orpheus_Telos_Picaro = 370, // [] {} ()
+    OrpheusF_Picaro = 371, // [] {} ()
+    P5_Unused_ID372 = 372, // [] {} ()
+    P5_Unused_ID373 = 373, // [] {} ()
+    P5_Unused_ID374 = 374, // [] {} ()
+    P5_Unused_ID375 = 375, // [] {} ()
+    P5_Unused_ID376 = 376, // [] {} ()
+    P5_Unused_ID377 = 377, // [] {} ()
+    P5_Unused_ID378 = 378, // [] {} ()
+    P5_Unused_ID379 = 379, // [] {} ()
+    P5_Unused_ID380 = 380, // [] {} ()
+    P5_Unused_ID381 = 381, // [] {} ()
+    P5_Unused_ID382 = 382, // [] {} ()
+    P5_Unused_ID383 = 383, // [] {} ()
+    P5_Unused_ID384 = 384, // [] {} ()
+    P5_Unused_ID385 = 385, // [] {} ()
+    P5_Unused_ID386 = 386, // [] {} ()
+    P5_Unused_ID387 = 387, // [] {} ()
+    P5_Unused_ID388 = 388, // [] {} ()
+    P5_Unused_ID389 = 389, // [] {} ()
+    P5_Unused_ID390 = 390, // [] {} ()
+    P5_Unused_ID391 = 391, // [] {} ()
+    P5_Unused_ID392 = 392, // [] {} ()
+    P5_Unused_ID393 = 393, // [] {} ()
+    P5_Unused_ID394 = 394, // [] {} ()
+    P5_Unused_ID395 = 395, // [] {} ()
+    P5_Unused_ID396 = 396, // [] {} ()
+    P5_Unused_ID397 = 397, // [] {} ()
+    P5_Unused_ID398 = 398, // [] {} ()
+    P5_Unused_ID399 = 399, // [] {} ()
+    P5_Unused_ID400 = 400, // [] {} ()
+    P5_Unused_ID401 = 401, // [] {} ()
+    P5_Unused_ID402 = 402, // [] {} ()
+    P5_Unused_ID403 = 403, // [] {} ()
+    P5_Unused_ID404 = 404, // [] {} ()
+    P5_Unused_ID405 = 405, // [] {} ()
+    P5_Unused_ID406 = 406, // [] {} ()
+    P5_Unused_ID407 = 407, // [] {} ()
+    P5_Unused_ID408 = 408, // [] {} ()
+    P5_Unused_ID409 = 409, // [] {} ()
+    P5_Unused_ID410 = 410, // [] {} ()
+    P5_Unused_ID411 = 411, // [] {} ()
+    P5_Unused_ID412 = 412, // [] {} ()
+    P5_Unused_ID413 = 413, // [] {} ()
+    P5_Unused_ID414 = 414, // [] {} ()
+    P5_Unused_ID415 = 415, // [] {} ()
+    P5_Unused_ID416 = 416, // [] {} ()
+    P5_Unused_ID417 = 417, // [] {} ()
+    P5_Unused_ID418 = 418, // [] {} ()
+    P5_Unused_ID419 = 419, // [] {} ()
+    P5_Unused_ID420 = 420, // [] {} ()
+    P5_Unused_ID421 = 421, // [] {} ()
+    P5_Unused_ID422 = 422, // [] {} ()
+    P5_Unused_ID423 = 423, // [] {} ()
+    Macabre = 424, // [] {} ()
+    Alilat = 425, // [] {} ()
+    Thunderbird = 426, // [] {} ()
+    Fafnir = 427, // [] {} ()
+    Byakhee = 428, // [] {} ()
+    Hastur = 429, // [] {} ()
+    Tam_Lin = 430, // [] {} ()
+    Throne_ID431 = 431, // [] {} ()
+    Surt_ID432 = 432, // [] {} ()
+    Loa = 433, // [] {} ()
+    Chimera = 434, // [] {} ()
+    Atavaka = 435, // [] {} ()
+    Cait_Sith_ID436 = 436, // [] {} ()
+    Siegfried = 437, // [] {} ()
+    P5_Unused_ID438 = 438, // [] {} ()
+    P5_Unused_ID439 = 439, // [] {} ()
+    Unknown_ID440 = 440, // [] {} ()
+    Unknown_ID441 = 441, // [] {} ()
+    Unknown_ID442 = 442, // [] {} ()
+    Unknown_ID443 = 443, // [] {} ()
+    Unknown_ID444 = 444, // [] {} ()
+    Unknown_ID445 = 445, // [] {} ()
+    Unknown_ID446 = 446, // [] {} ()
+    Unknown_ID447 = 447, // [] {} ()
+    Unknown_ID448 = 448, // [] {} ()
+    Unknown_ID449 = 449, // [] {} ()
+    Unknown_ID450 = 450, // [] {} ()
+    P3Unknown_ID451 = 451, // [] {} ()
+    P4Unknown_ID452 = 452, // [] {} ()
+    P3Unknown_ID453 = 453, // [] {} ()
+    P3Unknown_ID454 = 454, // [] {} ()
+    P3Unknown_ID455 = 455, // [] {} ()
+    P3Unknown_ID456 = 456, // [] {} ()
+    P4Unknown_ID457 = 457, // [] {} ()
+    P4Unknown_ID458 = 458, // [] {} ()
+    P4Unknown_ID459 = 459, // [] {} ()
+    P4Unknown_ID460 = 460, // [] {} ()
+    P4Unknown_ID461 = 461, // [] {} ()
+    RESERVE_ID462 = 462 // [] {} ()
+}
+
+enum Element {
+    Phys = 0,
+    Gun = 1,
+    Fire = 2,
+    Ice = 3,
+    Lightning = 4,
+    Wind = 5,
+    Nuclear = 6,
+    Psi = 7,
+    Curse = 8,
+    Bless = 9,
+    Almighty = 10 //Just use this for manual checks like ifs and case, otherwise your script will softlock lmao
+}
+
+enum Ailment {
+	Burn = 0x1,  //1
+	Freeze = 0x2, //2
+	Shock = 0x4, //4
+	Dizzy = 0x8, //8
+	Confused = 0x10, //16
+	Fear = 0x20, //32
+	Forget = 0x40, //64
+	Hunger = 0x80, //128
+	Sleep = 0x100, //256
+	Rage = 0x200, //512
+	Despair = 0x400, //1024
+	Brainwash = 0x800, // 2048
+	Desperation = 0x1000, //4096
+	Panic = 0x4000, //16384 – this is when an enemy is about to run from battle
+	Lust = 0x8000, // 32768
+	Wrath = 0x10000, // 65536 – Not to be confused with Rage
+	Envy = 0x20000, // 131072
+    Vanity = 0x40000, // 262144 – Weak to all affinities
+	KO = 0x80000, //  524288
+	Down = 0x100000, // 1048576
+	Rattled = 0x400000, // 4194304
+    PsiTech = 0x1158, //Flags for mental ailments, likely inflicted by the "Elusive Feline", thoigh I should not use this as it doesnt really work :true:
+    Cleanseable = 0x3CF //Simply To use for the 999 and 998 encounters to attempt to cleanse the debuffs with amrita
+}
+
+
+enum Hojo {
+	AttackUp = 0x1, // 1 – Tarukaja
+    AttackDown = 0x2, // 2 – Tarunda
+    SpeedUp = 0x4, // 4 – Sukukaja
+    SpeedDown = 0x8, // 8 – Sukunda
+    DefenseUp = 0x10, // 16 – Rakukaja
+    DefenseDown = 0x20, // 32 – Rakunda
+    SpeedUp2 = 0x40, // 64 – Sukukaja (again)
+    SpeedDown2 = 0x80, // 128 – Sukunda (again)
+    Charge = 0x100, // 256
+    Concentrate = 0x200, // 512
+    Unknown1 = 0x400, // 1024 – Not sure what this is but it’s often on even when no buffs/debufffs are active
+    Unknown2 = 0x800, // 2048 – Similar to Unknown1
+    CritRatePlus7Percent = 0x1000, // 4096 – Rebellion 
+    CritRatePlus15Perceont = 0x2000, // 8192 – Revolution
+    Tetrakarn = 0x4000, // 16384
+    Makarakarn = 0x8000, // 32768
+    FireBreak = 0x10000, // 65536
+    IceBreak = 0x20000, // 131072
+    WindBreak = 0x40000, // 262144
+    ElecBreak = 0x80000, // 524288
+    NukeBreak = 0x100000, // 1048576
+    PsyBreak = 0x200000, // 2097152
+    AilmentResHalved = 0x400000, // 4194304 – caused by Foul Breath/Stagnant Air
+    Tetrakarn2 = 0x800000, // 8388608 – for some reason using Tetrakarn causes both this and the 0x4000 flag to match
+    Makarakarn2 = 0x1000000, // 16777216 – for some reason using Makarakarn causes both this and the 0x8000 flag to match
+    Tetraja = 0x2000000, // 33554432
+    FireWall = 0x4000000, // 67108864
+    IceWall = 0x8000000, // 134217728
+    ElecWall = 0x10000000, // 268435456
+    WindWall = 0x20000000, // 536870912
+    NukeWall = 0x40000000, // 1073741824
+    PsyWall = 0x80000000, // -2147483648
+    HeatRiser = 0x15,
+    Debilitate = 0x2A
+}
+
+void TargetDecider( int StatusCheck, int AttackType, int AttackAffinity )
+{
+
+    AI_SET_LOCAL_PARAM( 1, 1 ); //Edit this as you wish, it's function in my scripts was as a phase counter, though can be replaced by a health check
+    int InternalThreshold;
+    switch ( AI_GET_ENBADOFF( Ailment.KO ) )//This should hopefukky fix the bug where we spam checkmate if only joker is alive, trying to take party size into account.
+    {
+        case 1:
+            InternalThreshold = 1
+        case 2:
+            InternalThreshold = 1
+        default:
+            InternalThreshold = 2
+    }
+    if ( StatusCheck == 1 )
+    {
+        //This is just to get our values at the start of an enemies turn, better for decision making
+
+        // Burn
+        BTL_SET_COUNTER( 1, AI_GET_ENBAD_ON( Ailment.Burn ) );
+
+        // Freeze and Shock
+        BTL_SET_COUNTER( 2, AI_GET_ENBAD_ON( 0x6 ) );
+
+        // Dizzy and Sleep
+        BTL_SET_COUNTER( 3, AI_GET_ENBAD_ON( 0x108 ) );
+
+        // Forget
+        BTL_SET_COUNTER( 4, AI_GET_ENBAD_ON( Ailment.Forget ) );
+
+        // Despair
+        BTL_SET_COUNTER( 5, AI_GET_ENBAD_ON( Ailment.Despair ) );
+
+        // Vanity
+        BTL_SET_COUNTER( 6, AI_GET_ENBAD_ON( Ailment.Vanity ) );
+
+        return;
+    }
+
+    if ( AttackType == 0 ) //Physical ( and gun I guess lol )
+    {       
+        //Might include ailment based phys skills in the future but otherwise this works
+        //Or even change targeting for high crit skills on main damage dealers 
+        TargetNotNull( AttackAffinity );
+        return;
+    }
+
+    else if ( AttackType == 1 ) //Technical
+    {
+        if ( AttackAffinity == 10 )
+        {
+            AI_TAR_BAD( Ailment.Sleep + Ailment.Dizzy );
+            return;
+        }
+        else if ( AttackAffinity == Element.Phys )
+        {
+            AI_TAR_BAD( ( Ailment.Sleep + Ailment.Dizzy + Ailment.Vanity + Ailment.Freeze ) );
+            return;
+        }
+        else if ( AttackAffinity == Element.Nuclear ) 
+        {
+            AI_TAR_BAD( ( Ailment.Burn + Ailment.Shock + Ailment.Freeze + Ailment.Vanity ) );
+            return;
+        }
+        else if ( AttackAffinity == Element.Psi )
+        {
+            AI_TAR_BAD( Ailment.PsiTech );
+            return;
+        }
+        else if ( AttackAffinity == Element.Wind )
+        {
+            AI_TAR_BAD( ( Ailment.Burn + Ailment.Sleep ) );
+            return;
+        }
+        else
+        {
+            AI_TAR_BAD( ( Ailment.Sleep + Ailment.Dizzy + Ailment.Vanity ) );
+            return;
+        }
+    }
+    else if ( AttackType == 2 ) //Magic
+    {
+        if ( AttackAffinity == 10 )  // Affinity is set to 10 for almighty, just to differentiate
+        {
+            switch ( AI_GET_LOCAL_PARAM( 1 ) )
+            {
+                case ( 1 ):
+                    AI_TAR_HPMAX();
+                    // Almighty during phase one Is likely just megidolaon from robin hood, or rebellion blade from hereward
+                    // So targeting is whatever
+                    return;
+                case ( 2 ):
+                    //Similarly to before, there are only a few almighty skills, most of which are aoe so targeting doesnt matter
+                    AI_TAR_RND();
+                    return;
+                
+                case ( 3 ):
+                    if ( AI_GET_ENHOJO_ON( Hojo.HeatRiser ) != 4 )
+                    {
+                        //Hit anyone that doesnt have all heat riser buffs
+                        AI_TAR_NOTHOJO( Hojo.HeatRiser );
+                        return;
+                    }
+                    else
+                    {
+                        AI_TAR_HPMIN();
+                        return;
+                    }
+                default:
+                    if ( AI_GET_ENHOJO_ON( Hojo.HeatRiser ) != 4 )
+                    {
+                        //Hit anyone that doesnt have all heat riser buffs
+                        AI_TAR_NOTHOJO( Hojo.HeatRiser );
+                        return;
+                    }
+                    else
+                    {
+                        AI_TAR_RND();
+                        return;
+                    }
+            }
+        }
+        else
+        {
+            if ( AI_CHK_ENWEAK( AttackAffinity ) == true )
+            {
+                if ( AI_CHK_ENWEAK_ST( AttackAffinity ) == true )
+                {
+                    // I would put something here to change the affinity for x so it doesnt get reflected by Makarakarn
+                    AI_TAR_WEAK_ST( AttackAffinity );
+                    return;
+                }
+                else
+                {
+                    //if no one is standing (and weak to something) then just hit a weakness
+                    TargetNotNull( AttackAffinity );
+                    return;
+                }
+            }
+            else
+            {
+                TargetNotNull( AttackAffinity );
+                return;
+            }
+        }
+    }
+    else if ( AttackType == 3 ) //Support, though this is kinda just unused for the most part since I used recursion...
+    //its also pointless because we just spam checkmate all the time instead of individually, though I might use this in the future...
+    //I would advise editing the checks also then
+    {
+        switch ( AttackAffinity )
+        {
+            case 1:
+                //Check if any enemty isnt hit with debilitate
+                if ( AI_GET_ENHOJO_ON( Hojo.Debilitate ) < InternalThreshold )
+                {
+                    AI_TAR_NOTHOJO( Hojo.Debilitate );
+                    return;
+                }
+                else if ( AI_GET_ENHOJO_ON( Hojo.Debilitate ) < InternalThreshold )
+                {
+                    AI_TAR_RND();
+                    return;
+                }
+                else if ( AI_GET_ENHOJO_ON( Hojo.HeatRiser ) > 2 )
+                {
+                    //If this previous condition isnt met (ie there are more people with heat riser active than debilitate)
+                    //Then we will trigger dekaja and as such the targeting is the more fitting
+                    AI_TAR_RND();
+                    return;
+                }
+                else
+                {
+                    PUTS( "Well idk what you did but here is something so it doesnt break" );
+                    AI_TAR_RND();
+                    return;
+                }
+            case 2:
+                //Since we will be using either aoe skills or be using 
+                //charge/concentrate on an attack to attack basis
+                //so we dont need insane scripting for the targeting
+                AI_TAR_MINE();
+                return;
+            case 3:
+                //While most of the time this wont matter, sometimes we
+                //Will use a single target ailment spell
+                AI_TAR_NOTBAD( BTL_GET_COUNTER( 16 ) );
+                //AI_TAR_RND();
+                return;
+            case 4:
+                //Just to be funny I have this extra case here for the break skills
+                AI_TAR_RND();
+                return;
+            case 5:
+                AI_TAR_BAD( Ailment.Cleanseable );
+                return;
+            case 6:
+                AI_TAR_HPMIN();
+                return;
+            default:
+                AI_TAR_RND();
+                return;
+        }
+    }
+    else
+    {
+        PUTS(  "WHAT DID YOU DO!!!" );
+        PUTS(  "The game is probally going to softlock now!" );
+        AI_TAR_RND();
+        return;
+    }
+}
+
+bool BTL_ISBAD( int FriendID )
+{
+    bool retVal = false;
+    if ( AI_CHK_FRIDBAD_ALL( FriendID, 0x100000 ) == 1 || AI_CHK_FRIDBAD_ALL( FriendID, 1 ) == 1 || AI_CHK_FRIDBAD_ALL( FriendID, 2 ) == 1 || AI_CHK_FRIDBAD_ALL( FriendID, 4 ) == 1 || AI_CHK_FRIDBAD_ALL( FriendID, 8 ) == 1 || AI_CHK_FRIDBAD_ALL( FriendID, 0x10 ) == 1 || AI_CHK_FRIDBAD_ALL( FriendID, 0x20 ) == 1 || AI_CHK_FRIDBAD_ALL( FriendID, 0x40 ) == 1 || AI_CHK_FRIDBAD_ALL( FriendID, 0x80 ) == 1 || AI_CHK_FRIDBAD_ALL( FriendID, 0x0100 ) == 1 || AI_CHK_FRIDBAD_ALL( FriendID, 0x0200 ) == 1 || AI_CHK_FRIDBAD_ALL( FriendID, 0x0400 ) == 1 || AI_CHK_FRIDBAD_ALL( FriendID, 0x0800 ) == 1 || AI_CHK_FRIDHP( FriendID, 1 ) )
+    {
+        retVal = true;
+    }
+
+    return retVal;
+}
+
+bool BTL_ISRESIST( int ElementCHK, int Target )
+{
+    bool AAA = false;
+    if ( Target == -1 )
+    {
+        if ( ( AI_CHK_ENRESIST( ElementCHK ) ) || ( AI_CHK_ENMUKOU( ElementCHK ) ) || ( AI_CHK_ENHANSYA( ElementCHK ) ) || ( AI_CHK_ENKYUSYU( ElementCHK ) ) )
+        {   
+            AAA = true;
+        }
+    }
+    else
+    {
+        if ( ( AI_CHK_ENIDMUKOU( Target, ElementCHK ) ) || ( AI_CHK_ENIDKYUSYU( Target, ElementCHK ) ) || ( AI_CHK_ENIDHANSYA( ElementCHK, Target ) ) )
+        {
+            AAA = true;
+        }
+    }
+    return AAA;
+}
+
+void TargetNotNull( int elementID )
+{
+    int yes;
+    if ( AI_CHK_ENHANSYA( elementID ) )
+    {
+        AI_TAR_NOTHANSYA( elementID );
+        PUTS("AI_TAR_NOTHANSYA");
+        yes = ( yes + 1 );
+    }
+    else if ( AI_CHK_ENKYUSYU( elementID ) )
+    {
+        AI_TAR_NOTKYUSYU( elementID );
+        PUTS("AI_TAR_NOTKYUSYU");
+        yes = ( yes + 1 );
+    }
+    else if ( AI_CHK_ENMUKOU( elementID ) )
+    {
+        AI_TAR_NOTMUKOU( elementID );
+        PUTS("AI_TAR_NOTMUKOU");
+        yes = ( yes + 1 );
+    }
+    else AI_TAR_RND();
+    return;
+}
