@@ -1,6 +1,7 @@
 Animation list for player based gap
-AS of inital creation it uses observation from ann's gap and ingame behaviour, so there could be discrepancies between teammates
+As of inital creation it uses observation from ann's gap and ingame behaviour, so there could be discrepancies between teammates, as well as being largely WIP
 More streamlined methods will be utilised in future and any differences will be documeted and notes made whenever possible
+format :  animation index : details [technical notes/effect for enemies] (details about/effects for other teammtes)
 
 0 : idle
 1 : idle action
@@ -20,22 +21,22 @@ More streamlined methods will be utilised in future and any differences will be 
 15 : Summon cast Startup
 16 : Summon cast idle
 17 : Summon end
-18 : End of battle background (unused for enemies)
+18 : End of battle background [unused for enemies]
 19 : REST POSE
 20 : REST POSE
 21 : REST POSE
-22 : Holdup Exit (Unused for enemies)
+22 : Holdup Exit [Unused for enemies]
 23 : Knocked down
 24 : knocked down/dead idle
 25 : Get up
-26 : Taunt? (Likely unused for enemies anyway)
-27 : idk (LIkely unused for enemies)
+26 : Taunt? [Likely unused for enemies anyway]
+27 : idk [LIkely unused for enemies]
 28 : Running 2
-29 : Item menu Startup (Unused for enemies)
-30 : Item menui idle (Unused for enemies)
-31 : Item menu end (Unused for enemies)
-32 : Item menu Exit (Unused for enemies)
-33 : End of battle foreground (Unused for enemies)
-34 : Harrisen recovery (Unused for enemies)
+29 : Item menu Startup [Unused for enemies]
+30 : Item menui idle [Unused for enemies]
+31 : Item menu end [Unused for enemies]
+32 : Item menu Exit [Unused for enemies]
+33 : End of battle foreground [Unused for enemies]
+34 : Harrisen recovery [Unused for enemies]
 35 : Baton pass give
 36 : Baton pass recieve
