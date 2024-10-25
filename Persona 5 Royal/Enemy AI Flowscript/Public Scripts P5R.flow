@@ -31,13 +31,13 @@ enum Skill {
     Agi_ID16 = 16, //"BLANK" [40 base Fire damage, Single Target, 4 SP, Uses Magic Stat, 98 Acc] {0010} (0016)
     Maragi_ID17 = 17, //"BLANK" [40 base Fire damage, Multi Target, 10 SP, Uses Magic Stat, 95 Acc] {0011} (0017)
     Fire_Ball = 18, //"BLANK" [300 base fire damage, Multi Target, 20% burn chance, 0 Cost, Uses magic stat, 98 Acc] {0012} (0018)
-    Raging_Flames = 19, //"" [] {} ()
-    Bufu = 20, //
-    Bufula = 21, //
-    Bufudyne = 22,
-    Mabufu = 23,
-    Mabufula = 24,
-    Mabufudyne = 25,
+    Raging_Flames = 19, //"BLANK" [1 base damage, Multi Target, deals no damage or healing, 0 cost, Uses Magic Stat , 100 Acc  ] {0013} (0019)
+    Bufu = 20, //"Light Ice dmg to one foe. Chance of inflicting Freeze." [40 base ice damage, Single Target, 25% Freeze Chance, 4 SP, Uses Magic Stat, 99 Acc] {0014} (0020)
+    Bufula = 21, //"Medium Ice dmg to one foe. Chance of inflicting Freeze."
+    Bufudyne = 22, //"Heavy Ice dmg to one foe. Chance of inflicting Freeze."
+    Mabufu = 23, //"Light Ice dmg to all foes. Chance of inflicting Freeze."
+    Mabufula = 24, //"Medium Ice dmg to all foes. Chance of inflicting Freeze."
+    Mabufudyne = 25, //"Heavy Ice dmg to all foes. Chance of inflicting Freeze."
     Bufu_ID26 = 26,
     Mabufu_ID27 = 27,
     Snow_Ball = 28,
@@ -1074,7 +1074,7 @@ enum Skill {
 
 //Enumeration Guide :
 //Call and search for personas via name or id, all special characters have been removed (eg Arséne is now Arsene) as well as spaces and dashes (They are underscores now, or should be anyway), untranslated names have been converted to Unknown and some have been removed,
-//more details are at those cases and there shall be no documentation on the personas. As always Dupes have been given the _IDxxxx
+//more details are at those cases and there shall be no technical documentation on the personas. As always Dupes have been given the _IDxxxx
 enum Persona {
     Zero = 0, // [] {} ()
     Metatron = 1, // [] {} ()
