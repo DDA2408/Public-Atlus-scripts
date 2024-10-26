@@ -5,7 +5,7 @@ void ignorethis()
 }
 //Enumeration guide :
 //Call skills by name ( AI_ACT_SKILL( Skill.Agi ); to use Agi), extra information is here to be convenient, or for those unable to (Or unwanting) To access Amicitia wiki
-//The usuable versions of skills will not have the _IDxxxx attached to them, only the ones used by bosses or possible duplicates, this is to make this enum less confusing for those not using custom skill.tbls and because it made the most sense
+//The usuable versions of skills will not have the _IDxxxx attached to them, only the ones used by bosses or possible duplicates, however some may be changed when their difference or usecase is known this is to make this enum less confusing for those not using custom skill.tbls and because it made the most sense
 //Below is a small guide about the extra information that will eventually be present on all skills, Format without any info is like this : skill = int, //"" [] {} ()
 //"Skill Description, if present. Edit the name.tbl in your relevant language's cpk, this has its own editing tool, dont use 010" [Technical Details, If relevant. Wont be shown for BLANK or Reserve skills, as they all use a default] {Full Hex ID} (Full Int ID) #Extra Notes : Author
 //If you plan to edit Any data about the skills and want to use this enum, I advise editing them here aswell, for Semantics sake
